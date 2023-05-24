@@ -49,6 +49,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_IP
@@ -67,7 +70,7 @@
             this.textBox_Port1.Name = "textBox_Port1";
             this.textBox_Port1.Size = new System.Drawing.Size(69, 20);
             this.textBox_Port1.TabIndex = 88;
-            this.textBox_Port1.Text = "2368";
+            this.textBox_Port1.Text = "1001";
             // 
             // textBox_IP1
             // 
@@ -93,8 +96,9 @@
             this.comboBox_GenerateFunction1.Items.AddRange(new object[] {
             "Синусоида",
             "Линейные данные",
-            "Случайные данные",
-            "Кубический "});
+            "Пила",
+            "Треугольник",
+            "Гауссовский шум"});
             this.comboBox_GenerateFunction1.Location = new System.Drawing.Point(178, 10);
             this.comboBox_GenerateFunction1.Name = "comboBox_GenerateFunction1";
             this.comboBox_GenerateFunction1.Size = new System.Drawing.Size(121, 21);
@@ -107,8 +111,9 @@
             this.comboBox_GenerateFunction2.Items.AddRange(new object[] {
             "Синусоида",
             "Линейные данные",
-            "Случайные данные",
-            "Кубический "});
+            "Пила",
+            "Треугольник",
+            "Гауссовский шум"});
             this.comboBox_GenerateFunction2.Location = new System.Drawing.Point(178, 37);
             this.comboBox_GenerateFunction2.Name = "comboBox_GenerateFunction2";
             this.comboBox_GenerateFunction2.Size = new System.Drawing.Size(121, 21);
@@ -121,8 +126,9 @@
             this.comboBox_GenerateFunction3.Items.AddRange(new object[] {
             "Синусоида",
             "Линейные данные",
-            "Случайные данные",
-            "Кубический "});
+            "Пила",
+            "Треугольник",
+            "Гауссовский шум"});
             this.comboBox_GenerateFunction3.Location = new System.Drawing.Point(178, 64);
             this.comboBox_GenerateFunction3.Name = "comboBox_GenerateFunction3";
             this.comboBox_GenerateFunction3.Size = new System.Drawing.Size(121, 21);
@@ -135,8 +141,9 @@
             this.comboBox_GenerateFunction4.Items.AddRange(new object[] {
             "Синусоида",
             "Линейные данные",
-            "Случайные данные",
-            "Кубический "});
+            "Пила",
+            "Треугольник",
+            "Гауссовский шум"});
             this.comboBox_GenerateFunction4.Location = new System.Drawing.Point(178, 91);
             this.comboBox_GenerateFunction4.Name = "comboBox_GenerateFunction4";
             this.comboBox_GenerateFunction4.Size = new System.Drawing.Size(121, 21);
@@ -172,7 +179,7 @@
             this.textBox_Port2.Name = "textBox_Port2";
             this.textBox_Port2.Size = new System.Drawing.Size(69, 20);
             this.textBox_Port2.TabIndex = 98;
-            this.textBox_Port2.Text = "2368";
+            this.textBox_Port2.Text = "1002";
             // 
             // textBox_Port3
             // 
@@ -180,7 +187,7 @@
             this.textBox_Port3.Name = "textBox_Port3";
             this.textBox_Port3.Size = new System.Drawing.Size(69, 20);
             this.textBox_Port3.TabIndex = 99;
-            this.textBox_Port3.Text = "2368";
+            this.textBox_Port3.Text = "1003";
             // 
             // textBox_Port4
             // 
@@ -188,7 +195,7 @@
             this.textBox_Port4.Name = "textBox_Port4";
             this.textBox_Port4.Size = new System.Drawing.Size(69, 20);
             this.textBox_Port4.TabIndex = 100;
-            this.textBox_Port4.Text = "2368";
+            this.textBox_Port4.Text = "1004";
             // 
             // label2
             // 
@@ -220,6 +227,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(305, 11);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(75, 17);
@@ -230,6 +239,8 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(305, 37);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(75, 17);
@@ -240,6 +251,8 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Location = new System.Drawing.Point(305, 63);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(75, 17);
@@ -250,6 +263,8 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Location = new System.Drawing.Point(305, 89);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(75, 17);
@@ -257,11 +272,39 @@
             this.checkBox4.Text = "Включить";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 3;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown1.Location = new System.Drawing.Point(46, 184);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 108;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(6, 184);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 109;
+            this.label5.Text = "Шум";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 182);
+            this.ClientSize = new System.Drawing.Size(393, 214);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -285,6 +328,7 @@
             this.Controls.Add(this.textBox_IP1);
             this.Name = "Form1";
             this.Text = "Щербинин Григорий 201-325 ";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +357,8 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label5;
     }
 }
 
